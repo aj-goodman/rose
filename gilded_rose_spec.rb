@@ -33,7 +33,7 @@ describe GildedRose do
       end
     end
 
-    context "the item is conjured" do
+    context "conjured items" do
       before :each do
         @conjure = Item.new("Conjure", 10, @base_quality)
         @items << @conjure
@@ -46,7 +46,7 @@ describe GildedRose do
       end
     end
 
-    context "the item is Aged Brie OR backstage passes" do
+    context "Aged Brie AND Backstage Passes" do
       before :each do
         @ab = Item.new("Aged Brie", 1, @base_quality)
         @bp = Item.new("Backstage passes to a TAFKAL80ETC concert", 1, @base_quality)
@@ -67,8 +67,8 @@ describe GildedRose do
         end
       end
 
-      context "the item is a backstage pass" do
-        context "there are <= 10 days until the concert" do
+      context "ONLY Backstage Passes" do
+        context "<= 10 days until the concert" do
           before :each do
             @items[1].sell_in = 9
             GildedRose.new(@items).update_quality
@@ -78,7 +78,7 @@ describe GildedRose do
           end
         end
 
-        context "there are <= 5 days until the concert" do
+        context "<= 5 days until the concert" do
           before :each do
             @items[1].sell_in = 4
             GildedRose.new(@items).update_quality
@@ -106,14 +106,14 @@ describe GildedRose do
       expect(@base_item.quality).to be >= 0
     end
 
-    context "the quality is <= 50" do
+    context "quality is <= 50" do
       it "decreases the quality by one" do
         GildedRose.new(@items).update_quality
         expect(@base_item.quality).to eq @base_quality - 1
       end
     end
 
-    context "and the item is Sulfuras" do
+    context "Sulfuras" do
       before :each do
         @sell_in = 10
         @items = [Item.new("Sulfuras, Hand of Ragnaros", @sell_in, @base_quality)]
