@@ -1,0 +1,58 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/adam/uni/ruby/gilded_rose.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          12,
+          null,
+          null,
+          1,
+          12,
+          19,
+          19,
+          19,
+          19,
+          19,
+          null,
+          null,
+          19,
+          5,
+          null,
+          5,
+          4,
+          4,
+          null,
+          4,
+          null,
+          2,
+          null,
+          7,
+          6,
+          6,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          27,
+          27,
+          27,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1688426227
+  }
+}
